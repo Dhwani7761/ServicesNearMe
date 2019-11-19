@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Service {
@@ -24,10 +25,19 @@ public class Service {
 	@Column
 	private double cost;
 
-	//@OneToMany(targetEntity=Request.class, mappedBy="service",cascade=CascadeType.ALL, fetch = FetchType.LAZY)
 	@OneToMany(mappedBy = "service", cascade = CascadeType.ALL, orphanRemoval = true)
-    //@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	private List<Request> req;
+
+	@OneToOne(mappedBy = "service", cascade = CascadeType.ALL, orphanRemoval = true , fetch = FetchType.LAZY)
+	private Professional professional;
+	
+	public Professional getProfessional() {
+		return professional;
+	}
+
+	public void setProfessional(Professional professional) {
+		this.professional = professional;
+	}
 
 	public long getSid() {
 		return sid;

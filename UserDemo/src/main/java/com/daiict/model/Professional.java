@@ -2,11 +2,20 @@ package com.daiict.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Professional {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
+	private long pid;
+	
 	@Column
 	private String firstname;
 
@@ -16,12 +25,34 @@ public class Professional {
 	@Column
 	private String password;
 
-	@Id
 	@Column
 	private String email;
 
 	@Column
 	private String areaOfExpertise;
+	
+	@OneToOne
+	@JoinColumn(name = "sid")
+	private Service service;
+
+	
+	public long getPid() {
+		return pid;
+	}
+
+	public void setPid(long pid) {
+		this.pid = pid;
+	}
+
+	
+
+	public Service getService() {
+		return service;
+	}
+
+	public void setService(Service service) {
+		this.service = service;
+	}
 
 	public String getFirstname() {
 		return firstname;

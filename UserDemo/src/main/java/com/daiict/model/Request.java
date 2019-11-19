@@ -12,10 +12,10 @@ import javax.persistence.ManyToOne;
 public class Request {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
 	private long id;
-	
+
 	@Column
 	private String cust_email;
 
@@ -33,16 +33,26 @@ public class Request {
 
 	@Column
 	private double total;
-	
+
 	@Column
 	private String status;
 	
+	@Column
+	private String email;
+
 	@ManyToOne()
-	//@JoinColumn(name="sid", referencedColumnName = "sid", insertable = false, updatable = false)
 	@JoinColumn(name = "sid")
 	private Service service;
 
 	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public String getStatus() {
 		return status;
 	}
@@ -107,6 +117,12 @@ public class Request {
 		this.service = service;
 	}
 
-	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 }

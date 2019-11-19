@@ -2,19 +2,26 @@ package com.daiict.model;
 
 import java.io.Serializable;
 
-public class CreateRequest implements Serializable{
+public class CreateRequest implements Serializable {
 
-	
 	private String cust_email;
 	private String request_cust_name;
 	private String request_cust_contact;
-	private String request_cust_address;	
+	private String request_cust_address;
 	private int quantity;
 	private double total;
 	private String status;
+	private String email;
 	private long sid;
 
-	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getStatus() {
 		return status;
 	}
@@ -78,7 +85,5 @@ public class CreateRequest implements Serializable{
 	public void setSid(long sid) {
 		this.sid = sid;
 	}
-
-	
 
 }
