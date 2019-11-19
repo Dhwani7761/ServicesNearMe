@@ -1,0 +1,15 @@
+com\daiict\model\Request.class
+com\daiict\repo\RequestRepo.class
+com\daiict\model\User.class
+com\daiict\controller\ServiceController.class
+com\daiict\model\Customer.class
+com\daiict\UserDemoApplication.class
+com\daiict\controller\RequestController.class
+com\daiict\repo\UserRepo.class
+com\daiict\controller\ProfesssionalController.class
+com\daiict\controller\CustomerController.class
+com\daiict\model\Professional.class
+com\daiict\repo\CustomerRepo.class
+com\daiict\repo\ProfessionalRepo.class
+com\daiict\model\Service.class
+com\daiict\repo\ServiceRepo.class
